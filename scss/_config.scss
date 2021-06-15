@@ -1,0 +1,88 @@
+$primary-color:#1b2021;
+$secondary-color:#ff8880;
+$tertiary-color:#99BDB9;
+$show-home-image:true;
+$home-image: url(../img/``landing.jpg);
+$topping-image: url(../img/sj-objio-XFWiZTa2Ub0-unsplash.jpg);
+$landing-image: url(../dist/img//scott-webb-IP8AOC0nwEc-unsplash.jpg);
+$background-opacity:0.2;
+@font-face {
+    font-family: niagara;
+    src: url(../dist/font/1NIAGENG.TTF);
+}
+@font-face {
+    font-family: gothic;
+    src: url(../dist/font/GOTHIC.TTF);
+}
+@font-face {
+    font-family: bemio;
+    src: url(../dist/font/Bemio.otf);
+}
+
+@mixin easeOut {
+    transition: all 0.3s ease-out;
+}
+@mixin background{
+    @if $show-home-image {
+        &.bg-img{
+            background: $home-image;
+            background-attachment:fixed;
+            background-size:cover;
+            
+            &:after{
+                content:'';
+                position:absolute;
+                top:0;
+                right:0;
+                width:100%;
+                height: 100%;
+                z-index: -1;
+                //background: rgba($secondary-color,$background-opacity);
+            }
+        }
+        &.bg-img2{
+            background: $topping-image;
+            background-attachment:fixed;
+            background-size:cover;
+            
+            &:after{
+                content:'';
+                position:absolute;
+                top:0;
+                right:0;
+                width:100%;
+                height: 100%;
+                z-index: -1;
+                //background: rgba($secondary-color,$background-opacity);
+            }
+        }
+        // &#bg-img3{
+        //     background: $home-image;
+        //     background-attachment:fixed;
+        //     background-size:cover;
+        // }
+    }
+}
+
+//media query mixin
+
+@mixin mediaSm{
+    @media screen and(max-width:500px){
+        @content;
+    }
+}
+@mixin mediaMd{
+    @media screen and(max-width:768px){
+        @content;
+    }
+}
+@mixin mediaLg{
+    @media screen and (min-width:769px) and(max-width:1170px){
+        @content;
+    }
+}
+@mixin mediaXl{
+    @media screen and(min-width:1171px){
+        @content;
+    }
+}

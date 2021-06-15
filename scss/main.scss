@@ -1,0 +1,439 @@
+@import 'config';
+@import 'menu';
+
+
+ *{
+    box-sizing: border-box;
+ }
+
+ body{
+    @include background;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:$primary-color;
+    height:100%;
+    margin:0;
+    line-height:1.5;
+ }
+ form{
+    margin: 3rem 2rem;
+    }
+    input[type=text]{
+        width: 100%;
+        border-radius: 10px;
+        height: 3rem;
+        border: none;
+    }
+    input[type=password]{
+        width: 100%;
+        border-radius: 10px;
+        height: 3rem;
+        border: none;
+    }
+    input[type=button]{
+        color: $primary-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+        background-color: $secondary-color;
+        width: 100%;
+        border-radius: 10px;
+        height: 3rem;
+        border: none;
+    }
+    input[type=button]:hover{
+        cursor: pointer;
+    }
+ .navbar{
+    font-family: bemio;
+    box-shadow: 0 2px 2px 0 rgba(31, 30, 30, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
+    top:0;
+    position:fixed;
+    z-index: 3;
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    .title{
+        overflow:hidden;
+        box-shadow: 0 2px 2px 0 rgba(31, 30, 30, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
+        position: fixed;
+        padding: 1rem 2.95rem ;
+        background-color: $tertiary-color;
+        z-index: 15;
+        top:0;
+        left:72%;
+    }
+    .nav-menu{
+        margin-top: 1.5rem;
+        width: 72%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+ }
+
+ h1, h2, h3{
+    margin:0;
+    font-weight:500;
+
+    &.large-heading{
+        font-family: niagara;
+        font-size:7rem;
+        padding-left: 3rem;
+        
+        //background:rgba(lighten($primary-color,8),0.25);
+    }
+    &.small-heading{
+        font-family: bemio;
+        color:$primary-color;
+        margin-bottom: 2rem;
+        padding-left: 15rem;
+        padding-bottom: 1rem;
+        //background:rgba(lighten($primary-color,8),0.25);
+    }
+ }
+ 
+
+ li{
+    list-style-type: none;
+ }
+
+ a{
+     color:$primary-color;
+     text-decoration:none; 
+     font-weight:600;
+
+     &:hover{
+        color:$secondary-color;
+        @include easeOut(); 
+     }
+ }
+
+header{
+    position:fixed;
+    z-index:2;
+    width:100%;
+ }
+
+ .text-secondary{
+    color:$secondary-color;
+ }
+
+main{
+    min-height:calc(100vh-60px);
+
+    .icons{
+        display: none;
+        //padding-left: 4rem;
+        //margin-top:1rem;
+        
+        a{
+            padding:0.4rem;
+            color:$primary-color;
+            &:hover{
+                color:$secondary-color;
+                @include easeOut();
+            }
+        }
+     }
+    //  &#home{
+    //     overflow: hidden;
+   
+    //     h1{
+    //         margin-top: 20vh;
+    //     }
+    // }
+    .container-heading{
+        display: flex;
+        padding: 7rem 0rem;
+        flex-direction: column;
+        justify-content: center;
+        
+        background:rgba(lighten($secondary-color,12),0.9);
+    }
+ }
+ #slider{
+    margin:0 auto;
+    width:100%;
+    max-width: 100%;
+    text-align: center;
+
+    input[type=radio]{
+        display: none;
+    }
+    label{
+        cursor:pointer;
+        text-decoration: none;
+    }
+    #slides{
+        //padding: 30px;
+        //border : 3px solid #ccc;
+        background: #fff;
+        position:relative;
+        z-index:1;
+
+        .inner{
+            transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            width: 400%;
+            line-height: 0;
+            height: 400px;
+        }
+        .slide{
+            width: 25%;
+            float:left;
+            display: block;
+            height: 100%;
+            color: #fff;
+        }
+        
+    }
+    #overflow{
+        width:100%;
+        overflow: hidden;
+    }
+    #slide1:checked~#slides .inner{
+        margin-left:0;
+    }
+    #slide2:checked~#slides .inner{
+        margin-left:-100%;
+    }
+    #slide3:checked~#slides .inner{
+        margin-left:-200%;
+    }
+    #controls{
+        margin:-130px 0 0 0;
+        width : 100%;
+        height: 50px;
+        z-index: 1;
+        position: relative;
+
+        label{
+            transition: opacity 0.2s ease-out;
+            display:none;
+            width: 50px;
+            height: 50px;
+            opacity:0.4;
+        }
+        label:hover{
+            opacity:1;
+        }
+        
+    }
+    #bullets{
+        margin: 100px 0 0;
+        text-align: center;
+
+        label{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background: #ccc;
+            margin: 0 10px;
+        }
+    }
+    #slide1:checked ~ #bullets label:nth-child(1),
+    #slide2:checked ~ #bullets label:nth-child(2),
+    #slide3:checked ~ #bullets label:nth-child(3){
+        background: #444;
+        
+    }
+}
+    
+
+ 
+ .box-login{
+    font-weight: 300;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    top:10%;
+    left:60%;
+    background-color: $primary-color;
+    height: 600px;
+    width: 500px;
+    z-index: 3;
+
+    h2{
+        margin-top: 5rem;
+        margin-left: 2rem;    
+    }
+    p{
+    text-align: center;
+    }
+    a{
+        color:#9dbeb9;
+    }
+    
+ }
+ ::placeholder{
+    color: rgba(lighten($primary-color,12),0.6);
+    padding-left: 1rem;
+ }
+ #btn-cancel:hover{
+    cursor: pointer;
+ }
+
+ .about-info{
+    display:grid;
+    grid-gap:30px;
+    grid-template-areas:
+    'bioimage bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3,1fr);
+
+        
+    .bio-image{
+        width: 250px;
+        height: 250px;
+        grid-area: bioimage;
+        margin: auto;
+        border-radius:50%;
+        border:$secondary-color 3px solid;
+    }
+
+    .bio{
+        grid-area:bio;
+        font-size:1.5rem;
+    }
+
+    .job-1{
+        grid-area: job1
+    }
+    .job-2{
+        grid-area: job3
+    }
+    .job-2{
+        grid-area: job3
+    }
+
+    .job{
+        background: darken(grey,5);
+        padding:0.5rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+}
+
+//work/project
+.projects{
+    margin: 6rem 1rem;
+    width: 70%;
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap:0.7rem;
+
+    img{
+        width: 100%;
+        border:3px #fff solid;
+
+        &:hover{
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+}
+.bill{
+    overflow: hidden;
+    margin-left:73%;
+    padding-left: 1.5rem;
+    top: 10%;
+    width:30%;
+    height: 100%;
+    position:fixed;
+    z-index: 0;
+    background-color: rgba($color: white, $alpha: 0.7);
+    .bill-item{
+        margin-top: 3rem;
+        width:85%;
+        border-radius: 10px;
+        height: 3rem;
+        border: 2px solid $primary-color ;
+    }
+    .bill-total{
+        @extend .bill-item;
+        h1{
+            padding-left:1rem;
+        }
+    }
+    input[type=button]{
+        margin-top: 2rem;
+        width:85%;
+
+        //cursor: pointer;
+    }
+    input[type=button]:hover{
+        cursor: pointer;
+    }
+}
+
+//Contact
+.boxes{
+    display:grid;
+    text-align:center;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top:1rem;
+
+    div{
+        font-size:2rem;
+        font-weight:500;
+        border:3px darken($primary-color,10) solid;
+        padding:1.5rem 2.5rem;
+        margin-bottom:3rem;
+        @include easeOut;
+
+        &:hover{
+            padding:0.5rem 1.5rem;
+        }
+    }
+}
+
+//button styles
+.btn{
+    display: block;
+    padding: 0.5rem 1rem;
+    border:0;
+    margin-top:0;
+    margin-bottom:0.3rem;
+
+    &:hover{
+       background:$primary-color;
+       color: $secondary-color; 
+    }
+}
+
+.btn-dark{
+    @extend .btn;
+    background: $secondary-color;
+    color:$primary-color;
+}
+.label{
+    display: block;
+    padding: 0.5rem 1rem;
+    border:0;
+    margin-top:0;
+    margin-bottom:0.3rem;
+    background:white;
+    color:$primary-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p{
+        font-family: bemio;
+        margin:0;
+    }
+}
+
+#main-footer{
+    position:relative;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background:darken($secondary-color,10);
+    color: set-text-color($secondary-color);
+    height:60px;
+    z-index: 5;
+}
+
+@import 'mobile';
