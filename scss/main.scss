@@ -16,20 +16,22 @@
  }
  form{
     margin: 3rem 2rem;
-    }
+    
     input[type=text]{
+        padding-left: 3rem;
         width: 100%;
         border-radius: 10px;
         height: 3rem;
         border: none;
     }
     input[type=password]{
+        padding-left: 3rem;
         width: 100%;
         border-radius: 10px;
         height: 3rem;
         border: none;
     }
-    input[type=button]{
+    button{
         color: $primary-color;
         font-size: 1.5rem;
         font-weight: 600;
@@ -39,9 +41,10 @@
         height: 3rem;
         border: none;
     }
-    input[type=button]:hover{
+    button:hover{
         cursor: pointer;
     }
+ }
  .navbar{
     font-family: bemio;
     box-shadow: 0 2px 2px 0 rgba(31, 30, 30, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
@@ -266,8 +269,9 @@ main{
     
  }
  ::placeholder{
+     font-size:medium;
     color: rgba(lighten($primary-color,12),0.6);
-    padding-left: 1rem;
+    //padding-left: 1rem;
  }
  #btn-cancel:hover{
     cursor: pointer;
