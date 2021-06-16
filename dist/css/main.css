@@ -99,8 +99,36 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+html {
+  scroll-behavior: smooth; }
+
 * {
   box-sizing: border-box; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 500; }
+  h1.large-heading, h2.large-heading, h3.large-heading {
+    font-family: niagara;
+    font-size: 7rem;
+    padding-left: 3rem; }
+  h1.small-heading, h2.small-heading, h3.small-heading {
+    font-family: bemio;
+    color: #1b2021;
+    margin-bottom: 2rem;
+    padding-left: 15rem;
+    padding-bottom: 1rem; }
+
+li {
+  list-style-type: none; }
+
+a {
+  color: #1b2021;
+  text-decoration: none;
+  font-weight: 600; }
+  a:hover {
+    color: #ff8880;
+    transition: all 0.3s ease-out; }
 
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -132,34 +160,58 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1; }
-
-form {
-  margin: 3rem 2rem; }
-
-input[type=text] {
-  width: 100%;
-  border-radius: 10px;
-  height: 3rem;
-  border: none; }
-
-input[type=password] {
-  width: 100%;
-  border-radius: 10px;
-  height: 3rem;
-  border: none; }
-
-input[type=button] {
-  color: #1b2021;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background-color: #ff8880;
-  width: 100%;
-  border-radius: 10px;
-  height: 3rem;
-  border: none; }
-
-input[type=button]:hover {
-  cursor: pointer; }
+  body#bg-img4 {
+    background: url(../img/joe-woods-4Zaq5xY5M_c-unsplash.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+  body#bg-img3 {
+    height: 500vh; }
+    body#bg-img3 #page-1 {
+      height: 100vh;
+      background: #9dbeb9; }
+    body#bg-img3 #page-2 {
+      height: 100vh;
+      background: burlywood; }
+    body#bg-img3 #page-3 {
+      height: 100vh;
+      background: darkslategrey; }
+    body#bg-img3 #page-4 {
+      height: 100vh;
+      background: hotpink; }
+  body#bg-img4 {
+    overflow: hidden; }
+    body#bg-img4 .box-login {
+      background: rgba(247, 236, 232, 0.9);
+      box-shadow: 0 2px 2px 0 rgba(31, 30, 30, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
+      border: 3px solid #1b2021;
+      margin-top: 6rem;
+      width: 1000px;
+      height: 500px; }
+      body#bg-img4 .box-login h1 {
+        color: #1b2021;
+        margin-top: 3rem;
+        margin-left: 3rem;
+        font-family: bemio;
+        font-size: 4rem; }
+      body#bg-img4 .box-login .col {
+        width: 950px; }
+      body#bg-img4 .box-login input {
+        border: 2px solid #1b2021;
+        width: 400px;
+        margin: 0 1rem; }
+      body#bg-img4 .box-login button {
+        border: 3px solid #1b2021; }
+    body#bg-img4 .png #png1 {
+      margin-top: 21rem;
+      position: absolute;
+      width: 50rem;
+      z-index: 0; }
+    body#bg-img4 .png #png2 {
+      margin-top: 36.2rem;
+      margin-left: 9rem;
+      position: absolute;
+      width: 13rem;
+      z-index: 4; }
 
 .navbar {
   font-family: bemio;
@@ -180,37 +232,48 @@ input[type=button]:hover {
     top: 0;
     left: 72%; }
   .navbar .nav-menu {
-    margin-top: 1.5rem;
+    padding: 1.5rem 2rem;
     width: 72%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around; }
+    justify-content: space-between; }
+    .navbar .nav-menu .nav-menu-left {
+      margin-left: 3rem;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+    .navbar .nav-menu .nav-menu-right {
+      width: 8%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between; }
 
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 500; }
-  h1.large-heading, h2.large-heading, h3.large-heading {
-    font-family: niagara;
-    font-size: 7rem;
-    padding-left: 3rem; }
-  h1.small-heading, h2.small-heading, h3.small-heading {
-    font-family: bemio;
+form {
+  margin: 3rem 2rem; }
+  form input {
+    font-size: large;
+    padding-left: 3rem;
+    width: 100%;
+    border-radius: 10px;
+    height: 3rem;
+    border: none; }
+  form button {
     color: #1b2021;
-    margin-bottom: 2rem;
-    padding-left: 15rem;
-    padding-bottom: 1rem; }
-
-li {
-  list-style-type: none; }
-
-a {
-  color: #1b2021;
-  text-decoration: none;
-  font-weight: 600; }
-  a:hover {
-    color: #ff8880;
-    transition: all 0.3s ease-out; }
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #ff8880;
+    width: 100%;
+    border-radius: 10px;
+    height: 3rem;
+    border: none; }
+    form button:hover {
+      cursor: pointer;
+      background-color: #1b2021;
+      border: 2px solid #ff8880;
+      color: #ff8880;
+      transition: all 0.3s ease-out; }
 
 header {
   position: fixed;
@@ -311,17 +374,29 @@ main {
   height: 600px;
   width: 500px;
   z-index: 3; }
-  .box-login h2 {
-    margin-top: 5rem;
-    margin-left: 2rem; }
-  .box-login p {
-    text-align: center; }
-  .box-login a {
+  .box-login .title {
+    width: 400px;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .box-login .title a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600; }
+      .box-login .title a:hover {
+        color: #ff8880;
+        transition: all 0.3s ease-out; }
+  .box-login .sub p {
+    text-align: left;
+    margin-left: 3rem; }
+  .box-login .sub a {
     color: #9dbeb9; }
 
 ::placeholder {
-  color: rgba(55, 65, 67, 0.6);
-  padding-left: 1rem; }
+  font-size: medium;
+  color: rgba(55, 65, 67, 0.6); }
 
 #btn-cancel:hover {
   cursor: pointer; }
@@ -329,7 +404,8 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio'
+ 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     width: 250px;
@@ -481,7 +557,11 @@ main {
       width: 150px;
       height: 150px; }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-areas: 'bioimage'
+ 'bio'
+ 'job1'
+ 'job2'
+ 'job3';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
