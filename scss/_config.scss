@@ -1,11 +1,16 @@
+//pallette
 $primary-color:#1b2021;
 $secondary-color:#ff8880;
 $tertiary-color:#99BDB9;
+$accent-color:#DCAD9D;
+//background
 $show-home-image:true;
 $home-image: url(../img/``landing.jpg);
 $topping-image: url(../img/sj-objio-XFWiZTa2Ub0-unsplash.jpg);
-$landing-image: url(../dist/img//scott-webb-IP8AOC0nwEc-unsplash.jpg);
+$landing-image: url(../img/joe-woods-4Zaq5xY5M_c-unsplash.jpg);
+
 $background-opacity:0.2;
+//font
 @font-face {
     font-family: niagara;
     src: url(../dist/font/1NIAGENG.TTF);
@@ -56,11 +61,11 @@ $background-opacity:0.2;
                 //background: rgba($secondary-color,$background-opacity);
             }
         }
-        // &#bg-img3{
-        //     background: $home-image;
-        //     background-attachment:fixed;
-        //     background-size:cover;
-        // }
+        &#bg-img4{
+            background: $landing-image;
+            background-attachment:fixed;
+            background-size:cover;
+        }
     }
 }
 
