@@ -1,3 +1,21 @@
+<?php
+require 'functions.php';
+if(isset($_POST['submit'])){	
+    if(registrasi($_POST)>0){
+        echo "
+            <script>
+                alert('Akun Berhasil Dibuat!');
+            
+            </script>";			
+    }else{
+        echo "
+            <script>
+                alert('Akun Gagal Dibuat!');
+            
+            </script>";		
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +34,8 @@
         <p style="text-align: left;margin-left: 3rem;">
             Already an user?<span></span> <a href="index.html">Login</a>
         </p>
-        <form action="#" style="margin: 1rem 3rem;">
+
+        <form action="#" method="GET"style="margin: 1rem 3rem;">
             <input type="text" id="nama" name="nama" placeholder="Name">
             <br><br>
             <input type="text" id="address" name="address" placeholder="Address">
@@ -27,7 +46,7 @@
             <br><br>
             <input type="text" id="pass" name="pass" placeholder="Password">
             <br><br>
-            <input type="button" value="SIGN UP"></input>
+            <button > SIGN UP</button>
         </form>
        
     </div>
