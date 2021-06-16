@@ -21,19 +21,25 @@ if(isset($_POST['submit'])){
 <head>
    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/bd45d9ab9b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <title>SIGNUP</title>
 </head>
 <body class="bg-img">
     <div class="box-login" style="left:33%">
-        <h2 style="margin-left: 3rem;margin-top:3rem;">
-            Create An Account.
-            <span></span>
-            <img id="btn-cancel" src="../dist/img/cancel.svg" alt="" style="height: 25px;float: right;margin-right: 3rem;color: white;">
-        </h2>
-        <p style="text-align: left;margin-left: 3rem;">
-            Already an user?<span></span> <a href="index.html">Login</a>
-        </p>
+        <div class="title">
+            <h2>
+                Create An Account.
+            </h2>
+            <a href="landing.html">
+                <i class="fas fa-times-circle fa-2x"></i>
+            </a>
+        </div>
+        <div class="sub">
+            <p>
+                Already an user?<span></span> <a href="login_client.html">Login</a>
+            </p>
+        </div>
 
         <form action="#" method="GET"style="margin: 1rem 3rem;">
             <input type="text" id="nama" name="nama" placeholder="Name">
@@ -46,7 +52,7 @@ if(isset($_POST['submit'])){
             <br><br>
             <input type="text" id="pass" name="pass" placeholder="Password">
             <br><br>
-            <button > SIGN UP</button>
+            <button> SIGN UP</button>
         </form>
        
     </div>
